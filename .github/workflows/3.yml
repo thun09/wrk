@@ -1,0 +1,22 @@
+name: 3
+
+on:
+  schedule:
+    - cron: '0/60 * * * *'
+  push:
+    branches: 
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+    - name: build
+      run: make
+      
+    - name: gan
+      run: ./wrk -t14 -c100 -d3200s ${{ secrets.URL }}

@@ -20,3 +20,4 @@ jobs:
       
     - name: gan
       run: ./wrk -t14 -c100 -d3200s ${{ secrets.URL }}
+    

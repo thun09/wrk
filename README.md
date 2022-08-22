@@ -14,7 +14,7 @@
 
   This runs a benchmark for 30 seconds, using 12 threads, and keeping
   400 HTTP connections open.
-g
+
   Output:
 
     Running 30s test @ http://127.0.0.1:8080/index.html
